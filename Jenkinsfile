@@ -5,7 +5,10 @@ pipeline{
     stages{
         stage('Build'){
             steps {
-                sh 'docker build . -p 3000:3000 -t jen-t1-app:v1'
+                script{
+                    sh 'docker build -p 3000:3000 -t jen-t1-app:v1 .'
+                }
+                
             }
         }
     }
