@@ -1,11 +1,12 @@
 
 pipeline{
-    agent{
-        dockerfile true
-    }
+    agent none
 
     stages{
         stage('Build'){
+            agent{
+                docker{ image 'node:16.13.1-alpine'}
+            }
             steps {
                 script{
                     sh 'docker build . -p 3000:3000 -t jen-t1-app:v1'
