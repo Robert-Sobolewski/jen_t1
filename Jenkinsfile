@@ -1,7 +1,8 @@
 
 pipeline{
     agent{
-        docker{ image 'node:16.13.1-alpine'}
+        // docker{ image 'node:16.13.1-alpine'}
+        docker { image 'mcr.microsoft.com/windows/servercore:ltsc2019'}
             }
 
     stages{
